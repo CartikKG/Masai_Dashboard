@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masai Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <style>
+      p {
+        font-size: 14px;
+        text-align: center;
+        color: grey;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        /* width: 35%; */
+        margin: auto;
+        margin-top: 37px;
+
+        justify-content: space-evenly;
+        width: 32%;
+        height: 493px;
+
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+          Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+      }
+      input[type="password"],
+      input[type="text"],
+      input[type="email"],
+      input[type="submit"] {
+        padding: 14px 13px;
+        border-radius: 10px;
+        border: 1px solid #cbcbcb;
+        margin-top: 9px;
+        margin-bottom: 4px;
+        font-size: 15px;
+        /* box-sizing: border-box; */
+      }
+      input[type="submit"] {
+        background-color: #e8eaed;
+        color: #969595;
+        border: none;
+        /* box-sizing: border-box; */
+      }
+      input[type="password"] {
+        width: 90%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 14px 13px;
+        /* box-sizing: border-box; */
+      }
+      input[type="submit"],
+      input[type="text"],
+      input[type="email"] {
+        width: 90%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 14px 13px;
+        /* box-sizing: border-box; */
+      }
+      div {
+        /* margin-top: -50px; */
+        width: 100%;
+      }
+      input[type="submit"] {
+        width: 97%;
+      }
+
+      h3 {
+        text-align: center;
+      }
+
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      ::placeholder {
+        color: rgb(216, 216, 216);
+        opacity: 1; /* Firefox */
+      }
+      #submiticon {
+        /* background-color:  #969595; */
+        background-color: #e8eaed;
+      }
+      #ChangeBack {
+        background-color: #34b7f9;
+      }
+      #loginwith {
+        background-color: #ffffff;
+        color: black;
+        border: 1px solid black;
+      }
+      #forget {
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+      }
+      a {
+        text-decoration: none;
+      }
+      @media (max-width: 700px) {
+        form {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="https://sso.masaischool.com/brand_dark.svg" alt="masailogo" />
+    </div>
+    <form>
+      <h3>Sign In</h3>
+      Email
+      <div>
+        <input type="email" id="email" placeholder="Enter Email" required="" />
+      </div>
+      <div id="forget">Password</div>
+
+      <div>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          id="id_password"
+          required=""
+        />
+        <span style="margin-left: -40px"
+          ><i class="far fa-eye" id="togglePassword" style="color: #969595"></i
+        ></span>
+      </div>
+
+      <div>
+        <input type="Submit" value="SIGN IN" id="submiticon" />
+      </div>
+
+      <p>
+        Don't have an account?
+
+        <a href="./index.html">Sign Up</a>
+        <!-- <a href=>Sign Up</a> -->
+      </p>
+    </form>
+  </body>
+  <script>
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#id_password");
+    togglePassword.addEventListener("click", function (e) {
+      const type =
+        password.getAttribute("type") === "password" ? "text" : "password";
+      password.setAttribute("type", type);
+      this.classList.toggle("fa-eye-slash");
+    });
+    ////
+    document.querySelector("form").addEventListener("submit", checkdata);
+    function checkdata() {
+      event.preventDefault();
+      console.log("KATTT");
+      let newemail = document.getElementById("email").value;
+      let newpasswords = document.getElementById("id_password").value;
+      let Alldata =
+        JSON.parse(localStorage.getItem("AllInstructorandStudent")) || [];
+      let flag = "false";
+      let loginflag = false;
+      let useremail = "";
+      Alldata.forEach((element) => {
+        if (element.email == newemail && element.password == newpasswords) {
+          loginflag = true;
+          useremail = element.email;
+          if (element.flag == "true") {
+            flag = "true";
+          } else if (element.flag == "false") {
+            flag = "false";
+          }
+        }
+      });
+      if (flag == "true") {
+        localStorage.setItem("flag", "true");
+      } else if (flag == "false") {
+        localStorage.setItem("flag", "false");
+      }
+
+      if (loginflag) {
+        localStorage.setItem("useremail", useremail);
+        alert("Login Succesfully");
+        window.open("./Students_Daily_Schedule.html");
+      } else if (!loginflag) {
+        alert("Wrong Credentials ");
+      }
+    }
+  </script>
+</html>

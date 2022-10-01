@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masai | Lecture</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/60b736368c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body></body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masai | Dashboard</title>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        font-family: "Roboto", sans-serif;
+      }
+      body {
+        background-color: rgb(237, 237, 237);
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: rgb(116, 116, 116);
+        /* border: 2px solid black; */
+        background-color: white;
+        border-bottom: 1px solid rgb(222, 222, 222);
+      }
+      a {
+        text-decoration: none;
+        color: rgb(116, 116, 116);
+      }
+      nav > div > div > a > img {
+        /* display: inline; */
+        width: 100%;
+      }
+      /* nav span:first-child {
+
+      } */
+      nav > div {
+        display: flex;
+      }
+      nav > div > div:first-child {
+        width: 6%;
+        padding: 12px 40px;
+        /* height: 20px; */
+      }
+      nav > div > button {
+        height: 44px;
+        width: 100%;
+        border: none;
+        padding: 0% 0%;
+        margin-right: 36px;
+        cursor: pointer;
+      }
+      /* #showdivafterclic {
+        display: none;
+      } */
+      #showdivafterclick {
+        /* display: ; */
+        display: none;
+        position: absolute;
+        top: 8%;
+        right: 2%;
+
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(210, 210, 210);
+      }
+      #showdivafterclick > li {
+        /* margin-top: 5px; */
+        padding: 10px 10px;
+        cursor: pointer;
+      }
+      #showdivafterclick > li:hover {
+        background-color: rgb(243, 243, 243);
+      }
+      #lecture {
+        /* display: flex; */
+        /* flex-direction: row; */
+        /* justify-content: center; */
+        /* margin-bottom: 1px; */
+        margin-top: 10px;
+        background-color: rgb(255, 0, 0);
+        padding: 5px 7px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      nav ul {
+        display: flex;
+        text-decoration: none;
+      }
+      nav ul > li {
+        list-style: none;
+        padding: 4px;
+        padding-bottom: 20px;
+        padding-top: 23px;
+        padding-right: 7px;
+        padding-left: 7px;
+      }
+      nav ul > li:hover {
+        cursor: pointer;
+        border-bottom: solid rgb(192, 189, 189) 1px;
+      }
+      header {
+        /* border: 2px solid red; */
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-bottom: 1px solid rgb(222, 222, 222);
+        background-color: white;
+      }
+      header > div > button {
+        padding: 8px 16px;
+        background-color: black;
+        color: white;
+        margin-right: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      header > div > button :hover {
+        background-color: rgb(226, 0, 0);
+        color: red;
+        /* background-color: aquamarine; */
+      }
+      main {
+        margin: auto;
+        margin-top: 30px;
+        width: 80%;
+        /* border: 1px solid rgb(207, 207, 207); */
+        background-color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      .sideforcolor {
+        display: flex;
+      }
+      .sideforcolor > div {
+        margin-left: 10px;
+      }
+      .sideforcolor div:first-child {
+        text-align: center;
+        background-color: #6366f1;
+        /* background-color: aqua; */
+        padding: 28px 48px;
+        font-size: bold;
+        font-weight: 500;
+        color: white;
+        cursor: pointer;
+      }
+      .sideforcolor div:nth-child(2) {
+        display: flex;
+        margin-top: 10px;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      li {
+        list-style: none;
+        text-decoration: none;
+      }
+      main ul li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgb(214, 214, 214);
+        padding: 32px 30px;
+      }
+      main ul li div div div span:first-child {
+        background-color: #dbeafe;
+        padding: 3px 6px;
+        border-radius: 15px;
+        color: blue;
+        font-size: 13px;
+      }
+      main ul li div div div span:nth-child(2) {
+        background-color: rgb(220 252 231);
+        padding: 3px 6px;
+        border-radius: 15px;
+        color: green;
+        font-size: 13px;
+      }
+
+      #editdiv {
+        position: absolute;
+        /* display: flex; */
+        width: 50%;
+        margin: auto;
+        /* margin-top: 0%; */
+        top: 13%;
+        left: 30%;
+        border: 5px solid rgb(255, 255, 255);
+        background-color: rgb(132, 162, 0);
+        z-index: 1;
+        border-radius: 10px;
+        display: none;
+        animation-name: kartik;
+        animation-duration: 2s;
+      }
+
+      #editdivv {
+        position: absolute;
+        /* display: flex; */
+        width: 50%;
+        margin: auto;
+        /* margin-top: 0%; */
+        top: 4%;
+        left: 30%;
+        border: 5px solid rgb(255, 255, 255);
+        background-color: rgb(67, 61, 231);
+        z-index: 1;
+        border-radius: 10px;
+        /* display: none; */
+        /* animation-name: kartik; */
+        /* animation-duration: 2s; */
+        animation: kartik 1s ease-in-out;
+        /* opacity: 2.2; */
+      }
+
+      @keyframes kartik {
+        from {
+          left: -100%;
+          /* transform: rotateY(0deg); */
+        }
+        to {
+          /* top: 13%; */
+
+          /* left: 200%; */
+          /* transform: rotateY(360deg); */
+        }
+      }
+
+      #editdivv h1 {
+        text-align: center;
+        color: rgb(255, 255, 255);
+      }
+      form {
+        width: 90%;
+        margin: auto;
+        margin-top: 10px;
+
+        display: flex;
+        flex-direction: column;
+        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
+        /* background-color:  */
+        /* background-color: rgba(114, 114, 114, 0.614); */
+      }
+
+      input[type="password"],
+      input[type="text"],
+      input[type="file"],
+      input[type="submit"],
+      select {
+        padding: 20px 40px;
+        margin: 10px;
+        border-radius: 10px;
+        font-size: 17px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+      }
+      input[type="submit"] {
+        background-color: rgb(251, 247, 6);
+        color: rgb(0, 0, 0);
+      }
+      input[type="submit"]:hover {
+        background-color: rgb(98, 224, 255);
+      }
+      #closetheedit {
+        position: absolute;
+        top: 0%;
+        right: -10%;
+        font-size: 40px;
+        border: 2px solid rgb(114, 114, 114);
+        border-radius: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <div>
+          <a href="./Students_Daily_Schedule.html">
+            <img src="https://learn.masaischool.com/img/logo_big.png" alt=""
+          /></a>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <a href="./lecture.html">Lecture</a>
+            </li>
+            <li>Assignment</li>
+            <li>Quizzes</li>
+            <li>Tickets</li>
+            <li>Discussions</li>
+            <li>Notifications</li>
+            <li>Messages</li>
+            <li>Electives</li>
+            <li>Announcements</li>
+            <li>Courses</li>
+            <li id="viewallstudent">
+              <a href="./viewallstudent.html"> View All Student</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <button id="buttons">KARTIK GUPTA (pw07)</button>
+        <div id="showdivafterclick">
+          <li>Manage Account</li>
+          <li onclick="editdivvisible()">Profile</li>
+          <li onclick="Logout()">Log Out</li>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <div><h3>Today's Schedule</h3></div>
+      <div><button>BOOKMARKS</button><button>REFER & EARN</button></div>
+    </header>
+    <main>
+      <ul id="displaydata">
+        <li>
+          <div class="sideforcolor">
+            <div>
+              <i class="fa-solid fa-calendar"></i> 7:30 PM <br />
+              LECTURE
+            </div>
+            <div>
+              <h2>SCRUM-30-40-2022</h2>
+              <h4>dhiraj kadam starting at 07:45 PM</h4>
+              <div>
+                <span>General</span>
+                <span>Live</span>
+              </div>
+            </div>
+          </div>
+          <div>Details ></div>
+        </li>
+      </ul>
+    </main>
+    <div id="editdiv">
+      <h1>EDIT DATA</h1>
+
+      <span id="closetheedit"> <i class="fa-sharp fa-solid fa-xmark"></i></span>
+      <form action="">
+        <input placeholder="Enter Your Name" type="text" id="name" />
+        <!-- <input placeholder="Enter Image Url" type="text" id="image" /> -->
+        <select name="" id="Batch">
+          <option value="PT-WEB-01">PT-WEB-01</option>
+          <option value="PT-WEB-02">PT-WEB-02</option>
+          <option value="PT-WEB-03">PT-WEB-03</option>
+          <option value="PT-WEB-04">PT-WEB-04</option>
+          <option value="PT-WEB-05">PT-WEB-05</option>
+          <option value="PT-WEB-06">PT-WEB-06</option>
+          <option value="PT-WEB-07">PT-WEB-07</option>
+          <option value="PT-WEB-08">PT-WEB-08</option>
+          <option value="PT-WEB-09">PT-WEB-09</option>
+          <option value="PT-WEB-10">PT-WEB-10</option>
+          <option value="PT-WEB-11">PT-WEB-11</option>
+          <option value="PT-WEB-12">PT-WEB-12</option>
+          <option value="PT-WEB-13">PT-WEB-13</option>
+          <option value="PT-WEB-14">PT-WEB-14</option>
+          <option value="PT-WEB-15">PT-WEB-15</option>
+          <option value="PT-WEB-16">PT-WEB-16</option>
+        </select>
+        <select name="" id="courcename">
+          <option value="Front-end Web Developer">
+            Front-end Web Developer
+          </option>
+          <option value="Back-end Web Developer">Back-end Web Developer</option>
+          <option value="Data Scientist">Data Scientist</option>
+        </select>
+        <select name="" id="unit">
+          <option value="UNIT-1">UNIT-1</option>
+          <option value="UNIT-2">UNIT-2</option>
+          <option value="UNIT-3">UNIT-3</option>
+          <option value="UNIT-4">UNIT-4</option>
+          <option value="UNIT-5">UNIT-5</option>
+          <option value="UNIT-6">UNIT-6</option>
+          <option value="UNIT-7">UNIT-7</option>
+        </select>
+        <input placeholder="Enter Your Email" type="text" id="email" />
+        <input
+          placeholder="Enter Your Password"
+          type="password"
+          id="password"
+        />
+        <input type="submit" id="submit" />
+      </form>
+    </div>
+  </body>
+  <script>
+    let Alldata =
+      JSON.parse(localStorage.getItem("AllInstructorandStudent")) || [];
+
+    let email = localStorage.getItem("useremail");
+
+    Alldata.map((el) => {
+      if (el.email == email) {
+        if (el.flag == "true") {
+          document.getElementById("buttons").innerHTML = `${el.name}`;
+        } else {
+          document.getElementById(
+            "buttons"
+          ).innerHTML = `${el.name} ${el.batch}`;
+        }
+      }
+    });
+    let alllecture = JSON.parse(localStorage.getItem("alllecture")) || [];
+    display(alllecture);
+
+    let allflag = localStorage.getItem("flag") || "false";
+    if (allflag == "false") {
+      //   console.log("flea");
+      document.getElementById("viewallstudent").style.display = "none";
+    } else {
+      document.getElementById("viewallstudent").style.display = "block";
+    }
+
+    document.getElementById("buttons").addEventListener("click", Changeui);
+    let flag = false;
+    function Changeui() {
+      // console.log("IK");
+      let pop = document.getElementById("showdivafterclick");
+      if (flag) {
+        pop.style.display = "none";
+        flag = false;
+      } else if (!flag) {
+        pop.style.display = "block";
+        flag = true;
+      }
+    }
+    let useremail = "";
+    function editdivvisible() {
+      let idd = document.getElementById("editdiv");
+      idd.id = "editdivv";
+      let Alldata =
+        JSON.parse(localStorage.getItem("AllInstructorandStudent")) || [];
+      let email = localStorage.getItem("useremail");
+      useremail = email;
+      Alldata.map((el) => {
+        if (el.email == email && el.flag == "false") {
+          document.getElementById("name").value = el.name;
+          document.getElementById("email").value = el.email;
+          document.getElementById("Batch").value = el.batch;
+          document.getElementById("courcename").value = el.course;
+          document.getElementById("unit").value = el.unit;
+          document.getElementById("password").value = el.password;
+        } else if (el.email == email && el.flag == "true") {
+          document.getElementById("name").value = el.name;
+          document.getElementById("email").value = el.email;
+          document.getElementById("Batch").style.display = "none";
+          document.getElementById("courcename").style.display = "none";
+          document.getElementById("unit").style.display = "none";
+          document.getElementById("password").value = el.password;
+        }
+      });
+    }
+    document.getElementById("submit").addEventListener("click", function () {
+      let email = document.getElementById("email").value;
+      let namee = document.getElementById("name").value;
+      let unitt = document.getElementById("unit").value;
+      let coursee = document.getElementById("courcename").value;
+      let Batchh = document.getElementById("Batch").value;
+      let password = document.getElementById("password").value;
+
+      let allflag = localStorage.getItem("flag") || "false";
+      if (allflag == "false") {
+        Alldata.map(function (el, idd) {
+          if (el.email == useremail) {
+            el.name = namee;
+            el.course = coursee;
+            el.unit = unitt;
+            el.batch = Batchh;
+            el.email = email;
+            el.password = password;
+          }
+        });
+        //  display(all);
+        localStorage.setItem(
+          "AllInstructorandStudent",
+          JSON.stringify(Alldata)
+        );
+        let idd = document.getElementById("editdivv");
+        idd.id = "editdiv";
+      } else if (allflag == "true") {
+        Alldata.map(function (el, idd) {
+          if (el.email == useremail) {
+            el.name = namee;
+            el.email = email;
+            el.password = password;
+          }
+        });
+
+        // console.log(allstudent);
+        // display(all);
+        localStorage.setItem(
+          "AllInstructorandStudent",
+          JSON.stringify(Alldata)
+        );
+        let idd = document.getElementById("editdivv");
+        idd.id = "editdiv";
+      }
+    });
+    document.querySelector("#closetheedit").addEventListener("click", close);
+    function close() {
+      let idd = document.getElementById("editdivv");
+      idd.id = "editdiv";
+      // document.querySelector("#main").style.opacity = "";
+    }
+
+    // this.name = a;
+    // this.instuctor = b;
+    // this.time = c;
+    // this.date = d;
+    function display(data) {
+      document.getElementById("displaydata").innerHTML = "";
+      data.map((el) => {
+        let li = document.createElement("li");
+        li.innerHTML = ` <div class="sideforcolor">
+            <div>
+              <i class="fa-solid fa-calendar"></i> ${el.time}<br />
+              LECTURE
+            </div>
+            <div>
+              <h2>${el.name}-${el.date}</h2>
+              <h4>${el.instuctor} starting at ${el.time}</h4>
+              <div>
+                <span>General</span>
+                <span>Live</span>
+              </div>
+            </div>
+          </div>
+          <div>Details ></div>
+            `;
+        document.getElementById("displaydata").append(li);
+      });
+    }
+    function Logout() {
+      // localStorage.getItem("flag");
+      window.open("./sign_in_masai.html", "_self");
+    }
+  </script>
+</html>
