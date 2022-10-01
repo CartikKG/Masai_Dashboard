@@ -34,7 +34,8 @@ function collectdata() {
   let course = document.getElementById("courcename").value || "";
   let email = document.getElementById("email").value || "";
   let password = document.getElementById("id_password").value || "";
-  if (batch == "" || unit == "" || course == "") {
+  let who = document.getElementById("who_i_am").value || "";
+  if (who == "Admit" || batch == "" || unit == "" || course == "") {
     let newInstructor = new DataCreateforadmin(name, email, password);
     let AllInstructor =
       JSON.parse(localStorage.getItem("AllInstructorandStudent")) || [];
@@ -43,7 +44,7 @@ function collectdata() {
       "AllInstructorandStudent",
       JSON.stringify(AllInstructor)
     );
-  } else {
+  } else if (who == "Student") {
     let newStudent = new DataCreateforStudent(
       name,
       batch,
