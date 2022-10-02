@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Masai | Today</title>
+    <title>Masai | Assignment</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap"
       rel="stylesheet"
@@ -40,10 +40,6 @@
         /* border: 2px solid black; */
         background-color: white;
         border-bottom: 1px solid rgb(222, 222, 222);
-      }
-      a {
-        text-decoration: none;
-        color: rgb(116, 116, 116);
       }
       nav > div > div > a > img {
         /* display: inline; */
@@ -137,19 +133,31 @@
         border-bottom: 1px solid rgb(222, 222, 222);
         background-color: white;
       }
-      header > div > button {
-        padding: 8px 16px;
-        background-color: black;
-        color: white;
-        margin-right: 10px;
+      header > div {
+        float: left;
+      }
+      #formforlecture {
+        width: 80%;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+      }
+      #formforlecture input[type="text"],
+      #formforlecture input[type="date"],
+      #formforlecture input[type="time"],
+      #formforlecture input[type="submit"] {
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        font-size: 15px;
+        box-sizing: border-box;
         border-radius: 10px;
-        cursor: pointer;
+        border: 1px solid grey;
       }
-      header > div > button :hover {
-        background-color: rgb(226, 0, 0);
-        color: red;
-        /* background-color: aquamarine; */
-      }
+
       main {
         margin: auto;
         margin-top: 30px;
@@ -157,6 +165,10 @@
         /* border: 1px solid rgb(207, 207, 207); */
         background-color: white;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(116, 116, 116);
       }
       .sideforcolor {
         display: flex;
@@ -185,25 +197,11 @@
         text-decoration: none;
       }
       main ul li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         border-bottom: 1px solid rgb(214, 214, 214);
         padding: 32px 30px;
       }
-      main ul li div div div span:first-child {
-        background-color: #dbeafe;
-        padding: 3px 6px;
-        border-radius: 15px;
+      main ul li h3 {
         color: blue;
-        font-size: 13px;
-      }
-      main ul li div div div span:nth-child(2) {
-        background-color: rgb(220 252 231);
-        padding: 3px 6px;
-        border-radius: 15px;
-        color: green;
-        font-size: 13px;
       }
 
       #editdiv {
@@ -259,7 +257,7 @@
         text-align: center;
         color: rgb(255, 255, 255);
       }
-      form {
+      #formforedit {
         width: 90%;
         margin: auto;
         margin-top: 10px;
@@ -271,12 +269,11 @@
         /* background-color:  */
         /* background-color: rgba(114, 114, 114, 0.614); */
       }
-
-      input[type="password"],
-      input[type="text"],
-      input[type="file"],
-      input[type="submit"],
-      select {
+      #editdivv input[type="password"],
+      #editdivv input[type="text"],
+      #editdivv input[type="file"],
+      #editdivv input[type="submit"],
+      #editdivv select {
         padding: 20px 40px;
         margin: 10px;
         border-radius: 10px;
@@ -284,11 +281,11 @@
         border: none;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
       }
-      input[type="submit"] {
+      #editdivv input[type="submit"] {
         background-color: rgb(251, 247, 6);
         color: rgb(0, 0, 0);
       }
-      input[type="submit"]:hover {
+      #editdivv input[type="submit"]:hover {
         background-color: rgb(98, 224, 255);
       }
       #closetheedit {
@@ -356,10 +353,10 @@
         </div>
         <div>
           <ul>
-            <li>
-              <a href="./lecture.html">Lecture</a>
+            <li><a href="./lecture.html"> Lecture</a></li>
+            <li style="border-bottom: solid rgb(192, 189, 189) 1px">
+              Assignment
             </li>
-            <li><a href="./Assigment.html"> Assignment</a></li>
             <li>Quizzes</li>
             <li>Tickets</li>
             <li>Discussions</li>
@@ -382,7 +379,6 @@
           <li onclick="Logout()">Log Out</li>
         </div>
       </div>
-      <!-- <a href="">   <i class="fa-solid fa-bag-shopping"></i>  </a> </i> -->
       <input type="Checkbox" id="checkboxnav" />
       <label
         for="check"
@@ -394,27 +390,32 @@
       ></label>
     </nav>
     <header>
-      <div><h3>Today's Schedule</h3></div>
-      <div><button>BOOKMARKS</button><button>REFER & EARN</button></div>
+      <div><h3>Lecture</h3></div>
     </header>
+    <form action="" id="formforlecture">
+      <input
+        placeholder="Assingment Description "
+        type="text"
+        name=""
+        id="Assingment-name"
+        required=""
+      />
+      <input
+        placeholder="Assingment By Instuctor"
+        type="text"
+        name=""
+        id="Instuctor-name"
+        required=""
+      />
+      <input type="date" name="" id="date" required="" />
+      <input type="time" name="" id="time" required="" />
+      <input type="submit" value="Publish" required="" />
+    </form>
     <main>
-      <ul id="displaydata">
+      <ul id="dataoflecture">
         <li>
-          <div class="sideforcolor">
-            <div>
-              <i class="fa-solid fa-calendar"></i> 7:30 PM <br />
-              LECTURE
-            </div>
-            <div>
-              <h2>SCRUM-30-40-2022</h2>
-              <h4>dhiraj kadam starting at 07:45 PM</h4>
-              <div>
-                <span>General</span>
-                <span>Live</span>
-              </div>
-            </div>
-          </div>
-          <div>Details ></div>
+          <h3>DISCUSSION SESSION 30-09-2022</h3>
+          <h4>Dhiraj Kadam Scheduled General at 30 Sep, 22 - 10:15 pm</h4>
         </li>
       </ul>
     </main>
@@ -422,7 +423,7 @@
       <h1>EDIT DATA</h1>
 
       <span id="closetheedit"> <i class="fa-sharp fa-solid fa-xmark"></i></span>
-      <form action="">
+      <form action="" id="formforedit">
         <input placeholder="Enter Your Name" type="text" id="name" />
         <!-- <input placeholder="Enter Image Url" type="text" id="image" /> -->
         <select name="" id="Batch">
@@ -469,5 +470,5 @@
       </form>
     </div>
   </body>
-  <script src="./Students_Daily_Schedule.js"></script>
+  <script src="./Assigment.js"></script>
 </html>
