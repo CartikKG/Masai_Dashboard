@@ -35,7 +35,7 @@ function collectdata() {
   let email = document.getElementById("email").value || "";
   let password = document.getElementById("id_password").value || "";
   let who = document.getElementById("who_i_am").value || "";
-  if (who == "Admit" || batch == "" || unit == "" || course == "") {
+  if ((who == "Admin" && batch == "") || unit == "" || course == "") {
     let newInstructor = new DataCreateforadmin(name, email, password);
     let AllInstructor =
       JSON.parse(localStorage.getItem("AllInstructorandStudent")) || [];
