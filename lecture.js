@@ -149,3 +149,16 @@ function Logout() {
   // localStorage.getItem("flag");
   window.open("./sign_in_masai.html", "_self");
 }
+let flagfornav = true;
+function Changenav() {
+  // document.getElementById("NAVBARUL").classList.toggle("changewholenav");
+  document.getElementById("MOBILECLICK").classList.toggle("MOBILECLICKDISPLAY");
+  if (flag) {
+    document.querySelector("nav ul").style.display = "none";
+    // do
+    flag = false;
+  } else {
+    document.querySelector("nav ul").style.display = "block";
+    flag = true;
+  }
+}

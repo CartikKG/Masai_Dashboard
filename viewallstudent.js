@@ -1,4 +1,3 @@
-
 let allflag = localStorage.getItem("flag") || "false";
 if (allflag == "false") {
   //   console.log("flea");
@@ -7,8 +6,7 @@ if (allflag == "false") {
   document.getElementById("viewallstudent").style.display = "block";
 }
 
-let Alldata =
-  JSON.parse(localStorage.getItem("AllInstructorandStudent")) || [];
+let Alldata = JSON.parse(localStorage.getItem("AllInstructorandStudent")) || [];
 
 let email = localStorage.getItem("useremail");
 
@@ -17,9 +15,7 @@ Alldata.map((el) => {
     if (el.flag == "true") {
       document.getElementById("buttons").innerHTML = `${el.name}`;
     } else {
-      document.getElementById(
-        "buttons"
-      ).innerHTML = `${el.name} ${el.batch}`;
+      document.getElementById("buttons").innerHTML = `${el.name} ${el.batch}`;
     }
   }
 });
@@ -118,10 +114,8 @@ function edit_it(index) {
   // document.querySelector("#main").style.opacity = "0.1";
 
   // console.log(targetarray[0]);
-  let name = (document.getElementById("name").value =
-    targetarray[0].innerHTML);
-  let unit = (document.getElementById("unit").value =
-    targetarray[3].innerHTML);
+  let name = (document.getElementById("name").value = targetarray[0].innerHTML);
+  let unit = (document.getElementById("unit").value = targetarray[3].innerHTML);
   1;
   let course = (document.getElementById("courcename").value =
     targetarray[2].innerHTML);
@@ -193,3 +187,16 @@ function Logout() {
   window.open("./sign_in_masai.html", "_self");
 }
 
+let flagfornav = true;
+function Changenav() {
+  // document.getElementById("NAVBARUL").classList.toggle("changewholenav");
+  document.getElementById("MOBILECLICK").classList.toggle("MOBILECLICKDISPLAY");
+  if (flag) {
+    document.querySelector("nav ul").style.display = "none";
+    // do
+    flag = false;
+  } else {
+    document.querySelector("nav ul").style.display = "block";
+    flag = true;
+  }
+}

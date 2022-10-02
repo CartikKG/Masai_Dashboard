@@ -120,6 +120,18 @@
         cursor: pointer;
         border-bottom: solid rgb(192, 189, 189) 1px;
       }
+      .checkbtn {
+        margin-right: 20px;
+        font-size: 20px;
+        /* line-height: 70px;  */
+        color: #000000;
+        cursor: pointer;
+        display: none;
+      }
+
+      #checkboxnav {
+        display: none;
+      }
       header {
         /* border: 2px solid red; */
         padding: 15px 20px;
@@ -300,6 +312,43 @@
         background-color: white;
         cursor: pointer;
       }
+      @media (max-width: 1000px) {
+        main {
+          width: 100%;
+        }
+
+        nav > div > button {
+          width: 120px;
+        }
+        nav ul {
+          position: absolute;
+          display: none;
+          width: 40%;
+          /* border: 2px solid red; */
+          background-color: white;
+          height: 100vh;
+          right: 0;
+        }
+        .checkbtn {
+          display: initial;
+        }
+        #check:checked ~ h3 {
+          background-color: #08016f;
+          color: aqua;
+        }
+      }
+      .MOBILECLICKDISPLAY {
+        margin-left: 6px;
+        /* position: absolute; */
+        position: fixed;
+        /* position: sticky; */
+        top: 6px;
+        left: 39px;
+        border: 5px solid rgb(201, 201, 201);
+        background: rgb(201, 201, 201);
+        padding: 4px;
+        /* /* z-index: 100; */
+      }
     </style>
   </head>
   <body>
@@ -341,6 +390,15 @@
           <li onclick="Logout()">Log Out</li>
         </div>
       </div>
+      <input type="Checkbox" id="checkboxnav" />
+      <label
+        for="check"
+        class="checkbtn"
+        id="MOBILECLICK"
+        onclick="Changenav()"
+      >
+        <i class="fas fa-bars"></i
+      ></label>
     </nav>
     <header>
       <div><h3>Today's Schedule</h3></div>
